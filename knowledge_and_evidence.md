@@ -63,6 +63,7 @@ This document includes instructions and knowledge questions that must be complet
 ```markdown
 ![Example Running Code](screenshots/screenshot1.png)
 ```
+![Example Running Code](docs/images/remote_settings.png)
 
 - You must upload the code into your GitHub repository.
 - While you can use a branch, your code should be in main when you submit.
@@ -116,11 +117,11 @@ python3 main.py
 
 2. Fill in (`_`) the following table based on the code in `smiley.py`:
 
-   | Object                   | Type                    |
-   | ------------             | ----------------------- |
-   | self.pixels              | _                       |
-   | A member of self.pixels  | _                       |
-   | self                     | _                       |
+   | Object                   | Type   |
+   | ------------             |--------|
+   | self.pixels              | Pixies |
+   | A member of self.pixels  | Double |
+   | self                     | Ego    |
 
 3. Examine the code for `smiley.py`, `sad.py`, and `happy.py`. Give an example of each of the following control structures using an example from **each** of these files. Include the first line and the line range:
 
