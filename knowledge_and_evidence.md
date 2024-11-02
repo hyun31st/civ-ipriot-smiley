@@ -329,13 +329,13 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   4. **Implementation Flexibility:** Explain why you could grant the Sad Smiley a blinking feature similar to the Happy Smiley's implementation, even without directly using `Blinkable`.
 
   > Your answer here
-  > <br/>I think Python program is very powerful and also flexible. Even if the blinking feature is defined in the Blinkable class, the Sad class can have "blink" method without inheriting the Blinkable abstract class.
-  > <br/>However, it's good practice and have benefit for team members to use the Blinkable class from the Sad class.
+  > <br/>If the Sad class doesn't get inherited from the Blinkable class, the Sad class can have any method even though name of "blink" method.
+  > <br/>However, I made the Sad class get inherited from the Blinkable class. I have to define "blink" method and it can be same as the Happy class's blink method or different because of polymorphism in OOP.
 
   5. **Concept and Language Specificity:** In relation to your response to question (4), what is this capability known as, and why is it feasible in Python and many other dynamically typed languages but not in most statically typed programming languages like C#? **Clue** This concept is hinted at in the title of this section.
 
   > Your answer here
-
+   <br/>Polymorphism
   ***
 
   ## Refactoring
@@ -348,9 +348,13 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
      1. Which colors are defined and in which class(s)?
         > Your answer here
+         <br/>The Smiley class has WHITE, GREEN, RED, YELLOW and BLANK as class variables.
      2. What type of variables hold these colors? Are the values expected to change during the program's execution? Explain your answer.
         > Your answer here
+         <br/>They are class variable and constants which means that they shouldn't be changed because it's all upper case.
      3. Add the color blue to the appropriate class using the appropriate format and values.
+        > Your answer here
+        > ![Sad Smiley Blinking](docs/JJ_attachments/add blue colour.png)
 
   2. **Usage of Color Variables:**
 
