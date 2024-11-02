@@ -36,14 +36,12 @@ Replace `YOUR_USERNAME` with your GitHub username.
 5. Navigate to the cloned repository:
 
 ```bash
-
 cd civ-ipriot-smiley
 ```
 
 6. Create a new branch:
 
 ```bash
-
 git switch -c por2
 ```
 
