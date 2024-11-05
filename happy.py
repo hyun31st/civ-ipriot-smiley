@@ -7,8 +7,8 @@ class Happy(Smiley, Blinkable):
     """
    Provides a Smiley with a happy expression
     """
-    def __init__(self):
-        super().__init__()
+    def __init__(self, complexion = "YELLOW"):
+        super().__init__(complexion)
 
         self.draw_mouth()
         self.draw_eyes()
@@ -28,7 +28,7 @@ class Happy(Smiley, Blinkable):
         """
         eyes = [10, 13, 18, 21]
         for pixel in eyes:
-            self.pixels[pixel] = self.BLANK if wide_open else self.YELLOW
+            self.pixels[pixel] = self.BLANK if wide_open else self.complexion()
 
     def blink(self, delay=0.25):
         """
@@ -36,6 +36,7 @@ class Happy(Smiley, Blinkable):
         
         :param delay: Delay between blinks (in seconds)
         """
+
         self.draw_eyes(wide_open=False)
         self.show()
         time.sleep(delay)

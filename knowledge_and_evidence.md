@@ -63,7 +63,6 @@ This document includes instructions and knowledge questions that must be complet
 ```markdown
 ![Example Running Code](screenshots/screenshot1.png)
 ```
-![Example Running Code](docs/images/remote_settings.png)
 
 - You must upload the code into your GitHub repository.
 - While you can use a branch, your code should be in main when you submit.
@@ -117,11 +116,11 @@ python3 main.py
 
 2. Fill in (`_`) the following table based on the code in `smiley.py`:
 
-   | Object                   | Type  |
-   | ------------             |-------|
-   | self.pixels              | List  |
-   | A member of self.pixels  | Tuple |
-   | self                     | Happy |
+   | Object                   | Type   |
+   | ------------             |--------|
+   | self.pixels              | List   |
+   | A member of self.pixels  | Tuple  |
+   | self                     | Smiley |
 
 3. Examine the code for `smiley.py`, `sad.py`, and `happy.py`. Give an example of each of the following control structures using an example from **each** of these files. Include the first line and the line range:
 
@@ -248,7 +247,9 @@ Compare and contrast the classes Happy and Sad.
    > <br/>**Smiley()**
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
    > Your answer here
-   >
+   <br/> Encapsulation of the SenseHat is essential in this project. Without it, students would needto use a Raspberry Pie or learn how to display a smiley face on the screen from scratch.
+   <br/> The SenseHat already includes all necessary code to display smiley face on the screen. Students can focus on changing its colour or face expression instead. Encapsulation breaks a large problem into smaller manageable tasks.
+   <br/> In this project, students don't have to solve "displaying a smiley face on screen" issue. It also makes easier for troubleshooting  
 
 ### Sad Smileys Can’t Blink (Or Can They?)
 
@@ -335,7 +336,9 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   5. **Concept and Language Specificity:** In relation to your response to question (4), what is this capability known as, and why is it feasible in Python and many other dynamically typed languages but not in most statically typed programming languages like C#? **Clue** This concept is hinted at in the title of this section.
 
   > Your answer here
-   <br/>Polymorphism
+   <br/>It's called 'Duck Typing'. 
+   <br/>Quoted in North Metropolitan TAFE's GitHub civ-ipriot-in-class-demos: "If it looks like a duck and quacks like a duck, then chances are it is a duck!"
+   <br/>The "blink" method is fully defined at the subclass level and works according to whatever written in the method. The most important part in dynamically typed languages is whether the method has necessary attributes. Otherwise, a runtime error will occur.
   ***
 
   ## Refactoring
@@ -351,7 +354,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
          <br/>The Smiley class has WHITE, GREEN, RED, YELLOW and BLANK as class variables.
      2. What type of variables hold these colors? Are the values expected to change during the program's execution? Explain your answer.
         > Your answer here
-         <br/>They are class variable and constants which means that they shouldn't be changed because it's all upper case.
+         <br/>They are class attributes, variables and constants which means that they shouldn't be changed because it's all upper case.
      3. Add the color blue to the appropriate class using the appropriate format and values.
         > Your answer here
         > ![Sad Smiley Blinking](docs/JJ_attachments/add blue colour.png)
@@ -360,10 +363,14 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
      1. In which classes are the color variables used?
         > Your answer here
+         <br/>The Smiley class defined the color variables and also used them.
+         <br/>The Happy and Sad class use the color variables.
 
   3. **Simple Method to Change Colors:**
   4. What is the easiest way you can think to change the smileys to green? Easiest, not necessarily the best!
      > Your answer here
+     <br/>Change "YELLOW" to any color from the below code.(e.g. Y = self.BLUE) 
+     <br/>Y = self.YELLOW
 
   Here's a revised version of the "Flexible Colors – Step 1" section for the smiley project, incorporating your specifications for formatting and content updates:
 
@@ -393,7 +400,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   4. **Bulk rename:** We want to update our grid to use the value of complexion, but we have so many `Y`'s in the grid. Use your IDE's refactoring tool to rename all instances of the **symbol** `Y` to `X`. Where `X` is the value of the `complexion` variable. Include a screenshot evidencing you have found the correct refactor tool and the changes made.
 
-  ![Bulk Rename](screenshots/bulk_rename.png)
+        ![Bulk Rename](docs/JJ_attachments/Refactor renaming.png)  
 
   5. **Update the `complexion` method:** Adjust this method to return `self.my_complexion`, ensuring that whatever color is assigned during instantiation is what the smiley displays.
 

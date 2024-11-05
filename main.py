@@ -7,15 +7,24 @@ import time
 
 from happy import Happy
 from sad import Sad
+from angry import Angry
 
 def main():
-    #smiley = Happy()
-    smiley = Sad()
-    smiley.show()
+    '''
+    The Happy class accepts a color name as a parameter(e.g. smiley = Happy('WHITE'))
+    The Sad and Angry classes don't accept any parameters, as their colors are set to default values.
+    '''
+    # smiley = Angry()
+    smiley = Happy()
+    # smiley = Happy('WHITE')
+    # smiley = Sad()
 
-    time.sleep(1)
+    for i in range(3):
+        smiley.show()
 
-    smiley.blink()
+        time.sleep(1)
+
+        smiley.blink()
 
 if __name__ == '__main__':
     ############################################################
