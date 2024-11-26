@@ -142,20 +142,23 @@ python3 main.py
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
 > Your answer here
-> <br/>Class variable is similar to global variable. It can be used in any class. However, instance variable is specific to the class.
+> <br/>Class variable can be used in any instances of the class. However, the instance variable is specific to the instance of the class.
 > <br/>Due to the different levels which variables are defined, the description(wording) should reflect their purpose.
-> <br/>WHITE, GREEEN, RED, YELOOW and BLANK each have unique RGB codes as tuples. These class variable ensure that other classes don't need to define them again.
+> <br/>WHITE, GREEEN, RED, YELOOW and BLANK each have unique RGB codes as tuples. These class variables ensure that any instance of classes don't need to define them again.
+> <br/>The self.sense_hat and self.pixels are examples of the instance variables. 
 
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
 
    > Your answer here
-   > <br/>When Happy class is initialized, draw_mouth() and draw_eyes() methods must be executed.
+   > <br/>A constructor initialises essential variables or methods when a class is instantiated.
+   > <br/>In this particular smiley project, when Happy class is initialised, draw_mouth() and draw_eyes() methods are executed, and the class attributes and instance variables from smiley class become available.
 
    2. What statement(s) does it execute (consider the `super` call), and what is the result?
 
    > Your answer here
-   > <br/>In order to initialize the base class's attributes in the inherited class.
+   > <br/>When the happy class is initialised, super().__init__() initialises attributes and methods from the superclasses.
+   > <br/>The self.draw_mouth() draws mouse and the self.draw_eyes() draws eyes.
 
 ### Code style
 
@@ -229,11 +232,12 @@ Compare and contrast the classes Happy and Sad.
    > <br/> The **draw_eyes** method is the key similarity and also both classes are inherited from Smiley class.
 3. What difference stands out the most to you and why?
    > Your answer here
-   > <br/> The if statement. The Sad class uses a traditional way for the if statement but the Happy class defines it in a single line.
-   > <br/> At first, it's hard to read it from happy class but once I get used to it, it becomes much simpler and easier to read.
+   > <br/>What classes are inherited.
+   > <br/>The Blinkable class is only inherited by the Happy class. Therefore, only Happy class has the blink method.
+
 4. How does this difference affect the functionality of these classes
    > Your answer here
-   > <br/> I don't think there is any functionality difference between if statements.
+   > <br/>The Happy class and Sad class will turn on LED or display the LED with different patterns. However, the happy class is blinkable, while sad class will turn on or display the LED as solid.
 
 ### Where is the Sense(Hat) in the code?
 
@@ -260,15 +264,15 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 1. Does the code's author believe that every `Smiley` should be able to blink? Explain.
 
 > Your answer here
-> <br/> Yes, every Smiley face (Sad or Happy) should be able to blink because blinking is an LED feature not limited a certain face type.
-> <br/> Blinking a face can add emphasis for people. It can be interpreted as making the expression even happier or sadder.
+> <br/> Yes, based on the Smiley class, every Smiley could have the option to blink or not. However, the Sad class doesn't inherited from the Blinkable class.
+> From the Sad class's point of view, it shouldn't be able to blink unless the Sad class also inherits from the Blinkable class and adds the blink method. 
 
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
 
 > Your answer here
-> <br/> No, it depends on the situation or occasion.
-> <br/> If the Smiley is working on an advertising sign, the interval can remain the same while the program is running.
-> <br/> However, if the Smiley interacts with other features such as music or reels(short videos on YouTube or TikTok), the blinking interval will vary.
+> <br/> No, the blink abstract method from the Blinkable class doesn't have any implemented code.
+> <br/> I assume this allows more flexibility for how the blink method behaves, depending on it's implementation.
+> <br/> This is a good example of polymorphism, as it provides more options for the (abstract) method to have customized features in its implemented version.
 
 3. Referring to the implementation of blink in the Happy and Sad Smiley classes, give a brief explanation of what polymorphism is.
 
